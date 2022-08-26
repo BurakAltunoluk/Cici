@@ -9,23 +9,23 @@ public class Cici {
     public var backroundImage = UIImageView()
     public var buttonBackroundColor = UIColor.red
     public var mesaggeTextColor = UIColor.white
-    public var height = 20.0
+    public var heightSmaller = 20.0
     public var horizontalMargins = 20.0
     
     public init() {}
     
-    public func showAlert(messageText: String, title: String, buttonTitle: String) {
+    public func showAlert(messageText: String, buttonTitle: String) {
         blurEffect()
         let x = self.view.bounds.width
         let y = self.view.bounds.height
         let alertViewWidth = x - (2 * horizontalMargins)
        
         //MARK: Alertview
-        alertView = UIView(frame: CGRect(x: horizontalMargins , y: (y / 2) - (alertViewWidth / 2.2) , width: alertViewWidth, height: y / 2 - height) )
+        alertView = UIView(frame: CGRect(x: horizontalMargins , y: (y / 2) - (alertViewWidth / 2.2) , width: alertViewWidth, height: y / 2 - heightSmaller) )
         alertView.layer.cornerRadius = 5
         alertView.backgroundColor = backgroundColor
         if backroundImage.image != nil {
-            backroundImage.frame = CGRect(x: 0, y: 0, width: alertViewWidth, height:  y / 2 - height)
+            backroundImage.frame = CGRect(x: 0, y: 0, width: alertViewWidth, height:  y / 2 - heightSmaller)
             alertView.addSubview(backroundImage)
         }
         
@@ -34,7 +34,6 @@ public class Cici {
         message.numberOfLines = 2
         message.textAlignment = .center
         message.textColor = mesaggeTextColor
-       // message.backgroundColor = .blue
         message.font = .systemFont(ofSize: 25)
         message.adjustsFontSizeToFitWidth = true
         message.text = messageText
@@ -65,7 +64,6 @@ public class Cici {
         view.addSubview(blurEffectView)
     }
     
-    //MARK: Functions
     func removeBlurView() {
         for subview in view.subviews {
             if subview.isKind(of: UIVisualEffectView.self) {
@@ -73,6 +71,7 @@ public class Cici {
             }
         }
     }
+    
     
     @objc func buttonAction() { self.alertView.isHidden = true
         for subview in view.subviews {
