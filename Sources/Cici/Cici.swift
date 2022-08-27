@@ -18,10 +18,11 @@ public class Cici {
         blurEffect()
         let x = self.view.bounds.width
         let y = self.view.bounds.height
+        let alertViewXCordinate = (y / 2 - heightSmaller) / 2
         let alertViewWidth = x - (2 * horizontalMargins)
        
         //MARK: Alertview
-        alertView = UIView(frame: CGRect(x: horizontalMargins , y: (y / 2) - (alertViewWidth / 2.2) , width: alertViewWidth, height: y / 2 - heightSmaller) )
+        alertView = UIView(frame: CGRect(x: horizontalMargins , y: y / 2 - alertViewXCordinate, width: alertViewWidth, height: y / 2 - heightSmaller) )
         alertView.layer.cornerRadius = 5
         alertView.backgroundColor = backgroundColor
         if backroundImage.image != nil {
@@ -72,6 +73,7 @@ public class Cici {
         }
     }
     
+  
     
     @objc func buttonAction() { self.alertView.isHidden = true
         for subview in view.subviews {
