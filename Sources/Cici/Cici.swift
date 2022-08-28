@@ -3,7 +3,7 @@ import UIKit
 
 public class Cici {
     
-    var alertView = UIView()
+    public var alertView = UIView()
     public var view = UIView()
     public var backgroundColor = UIColor.orange
     public var backroundImage = UIImageView()
