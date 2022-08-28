@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name        = "SwiftyJSON"
+  s.name        = "Cici"
   s.version     = "1.2.0"
   s.homepage    = "https://github.com/BurakAltunoluk/CiciV.2.git"
   s.license     = { :type => "MIT" }
