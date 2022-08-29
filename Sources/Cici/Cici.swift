@@ -3,30 +3,29 @@ import UIKit
 
 public class Cici {
     
-    public var alertView = UIView()
-    public var view = UIView()
+    var alertView = UIView()
     public var backgroundColor = UIColor.orange
     public var backroundImage = UIImageView()
     public var buttonBackroundColor = UIColor.red
     public var mesaggeTextColor = UIColor.white
-    public var heightSmaller = 20.0
-   public var horizontalMargins = 20.0
-    
+    public var heightExtra = 0.0
+    public var horizontalMargins = 0.0
+    public var view = UIView()
     public init() {}
     
     public func showAlert(messageText: String, buttonTitle: String) {
         blurEffect()
         let x = self.view.bounds.width
         let y = self.view.bounds.height
-        let alertViewXCordinate = (y / 2 - heightSmaller) / 2
+        let alertViewXCordinate = (y / 2 - horizontalMargins) / 2
         let alertViewWidth = x - (2 * horizontalMargins)
-       
+        
         //MARK: Alertview
-        alertView = UIView(frame: CGRect(x: horizontalMargins , y: y / 2 - alertViewXCordinate, width: alertViewWidth, height: alertViewWidth) )
+        alertView = UIView(frame: CGRect(x: horizontalMargins , y: (y / 2) - alertViewXCordinate - (heightExtra / 2), width: alertViewWidth, height: alertViewWidth + heightExtra) )
         alertView.layer.cornerRadius = 5
         alertView.backgroundColor = backgroundColor
         if backroundImage.image != nil {
-            backroundImage.frame = CGRect(x: 0, y: 0, width: alertViewWidth, height:  y / 2 - heightSmaller)
+            backroundImage.frame = CGRect(x: 0, y: 0, width: alertViewWidth, height:  alertViewWidth)
             alertView.addSubview(backroundImage)
         }
         
@@ -57,8 +56,8 @@ public class Cici {
     }
     //MARK: BlurEffect
     func blurEffect() {
-       
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -72,8 +71,6 @@ public class Cici {
             }
         }
     }
-    
-  
     
     @objc func buttonAction() { self.alertView.isHidden = true
         for subview in view.subviews {
