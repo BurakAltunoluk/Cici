@@ -10,7 +10,7 @@ public class Cici {
     public var buttonBackroundColor = UIColor.red
     public var mesaggeTextColor = UIColor.white
     public var heightSmaller = 20.0
-    public var horizontalMargins = 20.0
+   public var horizontalMargins = 20.0
     
     public init() {}
     
@@ -22,7 +22,7 @@ public class Cici {
         let alertViewWidth = x - (2 * horizontalMargins)
        
         //MARK: Alertview
-        alertView = UIView(frame: CGRect(x: horizontalMargins , y: y / 2 - alertViewXCordinate, width: alertViewWidth, height: y / 2 - heightSmaller) )
+        alertView = UIView(frame: CGRect(x: horizontalMargins , y: y / 2 - alertViewXCordinate, width: alertViewWidth, height: alertViewWidth) )
         alertView.layer.cornerRadius = 5
         alertView.backgroundColor = backgroundColor
         if backroundImage.image != nil {
