@@ -4,12 +4,13 @@ import UIKit
 public class Cici {
     
     var alertView = UIView()
+    public var heightExtra = 0.0
+    public var horizontalMargins = 0.0
+    public var mesaggeTextColor = UIColor.white
     public var backgroundColor = UIColor.orange
     public var backroundImage = UIImageView()
     public var buttonBackroundColor = UIColor.red
-    public var mesaggeTextColor = UIColor.white
-    public var heightExtra = 0.0
-    public var horizontalMargins = 0.0
+    public var buttonWidth = 60.0
     public var view = UIView()
     public init() {}
     
@@ -40,7 +41,7 @@ public class Cici {
         alertView.addSubview(message)
         
         //MARK: Button
-        let button = UIButton(frame: CGRect(x: 10 , y: alertView.bounds.height - 40, width: 60, height: 30))
+        let button = UIButton(frame: CGRect(x: 10 , y: alertView.bounds.height - 40, width: buttonWidth, height: 30))
         button.layer.cornerRadius = 6
         button.setTitle(buttonTitle, for: UIControl.State.normal)
         button.backgroundColor = buttonBackroundColor
