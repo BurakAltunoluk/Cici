@@ -17,8 +17,6 @@ final public class Cici {
     public func showAlert(messageText: String, buttonTitle: String) {
         blurEffect()
         let x = self.view.bounds.width
-     //   let y = self.view.bounds.height
-     //   let alertViewXCordinate = (y / 2 - horizontalMargins) / 2
         let alertViewWidth = x - (2 * horizontalMargins)
         
         //MARK: Alertview
