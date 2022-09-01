@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public class Cici {
+final public class Cici {
     
     var alertView = UIView()
     public var heightExtra = 0.0
@@ -17,12 +17,12 @@ public class Cici {
     public func showAlert(messageText: String, buttonTitle: String) {
         blurEffect()
         let x = self.view.bounds.width
-        let y = self.view.bounds.height
-        let alertViewXCordinate = (y / 2 - horizontalMargins) / 2
+     //   let y = self.view.bounds.height
+     //   let alertViewXCordinate = (y / 2 - horizontalMargins) / 2
         let alertViewWidth = x - (2 * horizontalMargins)
         
         //MARK: Alertview
-        alertView = UIView(frame: CGRect(x: horizontalMargins , y: (y / 2) - alertViewXCordinate - (heightExtra / 2), width: alertViewWidth, height: alertViewWidth + heightExtra) )
+        alertView = UIView(frame: CGRect(x: 0 , y: 0, width: alertViewWidth, height: alertViewWidth + heightExtra) )
         alertView.layer.cornerRadius = 5
         alertView.backgroundColor = backgroundColor
         if backroundImage.image != nil {
@@ -53,8 +53,8 @@ public class Cici {
         let warningImage = UIImageView(frame: CGRect(x: alertView.bounds.width / 2 - 32, y: -32, width: 65, height: 65))
         warningImage.image = UIImage(named: "warning")
         alertView.addSubview(warningImage)
-        
     }
+    
     //MARK: BlurEffect
     func blurEffect() {
         
