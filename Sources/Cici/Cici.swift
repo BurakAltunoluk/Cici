@@ -21,6 +21,7 @@ final public class Cici {
         
         //MARK: Alertview
         alertView = UIView(frame: CGRect(x: 0 , y: 0, width: alertViewWidth, height: alertViewWidth + heightExtra) )
+        alertView.center = view.center
         alertView.layer.cornerRadius = 5
         alertView.backgroundColor = backgroundColor
         if backroundImage.image != nil {
