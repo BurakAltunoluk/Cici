@@ -8,6 +8,7 @@
  <p>xode -> file -> add packages -> https://github.com/BurakAltunoluk/Cici.git -> Cici -> Add Package </p>
  
 ```swift
+import Cici //add
 class Viewcontroller: UIViewController {
     let cici = Cici() //add 
     
